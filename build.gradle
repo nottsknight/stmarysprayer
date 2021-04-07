@@ -2,6 +2,7 @@
 buildscript {
     ext.kotlin_version = "1.4.32"
     ext.arrow_version = "0.13.1"
+    ext.fuel_version = "2.3.1"
     repositories {
         google()
         jcenter()
