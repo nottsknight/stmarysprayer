@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">St Mary\'s Prayer</string>
+
+    <!-- PREFERENCES -->
+    <string name="prefs_scripture">Bible references</string>
+    <string name="prefs_scripture_versenumbers_key">include-verse-numbers</string>
+    <string name="prefs_scripture_versenumbers_value">Show verse numbers?</string>
+    <string name="prefs_scripture_firstversenumbers_key">include-first-verse-numbers</string>
+    <string name="prefs_scripture_firstversenumbers_value">Show verse number for first verse in chapter?</string>
+    <string name="prefs_scripture_headings_key">include-headings</string>
+    <string name="prefs_scripture_headings_value">Show headings?</string>
+    <string name="prefs_scripture_footnotes_key">include-footnotes</string>
+    <string name="prefs_scripture_footnotes_value">Show footnotes?</string>
 </resources>

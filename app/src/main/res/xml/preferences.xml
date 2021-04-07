@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/prefs_scripture">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/prefs_scripture_versenumbers_key"
+            android:title="@string/prefs_scripture_versenumbers_value" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/prefs_scripture_firstversenumbers_key"
+            android:title="@string/prefs_scripture_firstversenumbers_value" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/prefs_scripture_headings_key"
+            android:title="@string/prefs_scripture_headings_value" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/prefs_scripture_footnotes_key"
+            android:title="@string/prefs_scripture_footnotes_value" />
+    </PreferenceCategory>
+</PreferenceScreen>

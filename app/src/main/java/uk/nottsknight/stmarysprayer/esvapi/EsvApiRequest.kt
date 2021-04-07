@@ -17,7 +17,7 @@ private val WHITESPACE = Regex("\\s")
 
 private fun String.buildUriFrom(
     passages: List<String>,
-    parameters: List<Pair<String, String>>
+    parameters: List<Pair<String, Any>>
 ): String {
 
     val queries = passages.map { it.replace(WHITESPACE, "") }.reduce { acc, s -> acc + s }
@@ -30,7 +30,7 @@ private fun String.buildUriFrom(
 
 class EsvApiRequest(
     passages: List<String>,
-    parameters: List<Pair<String, String>>,
+    parameters: List<Pair<String, Any>>,
     private val successListener: Response.Listener<EsvApiResponse>,
     errorListener: Response.ErrorListener
 ) : Request<EsvApiResponse>(
