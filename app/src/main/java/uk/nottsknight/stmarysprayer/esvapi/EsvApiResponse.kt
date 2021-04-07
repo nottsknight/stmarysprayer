@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 data class EsvApiResponse(
     val query: String,
     val canonical: String,
-    val parsed: Array<Array<String>>,
+    val parsed: Array<Array<Int>>,
     @SerialName("passage_meta") val passageMeta: Array<EsvPassageMeta>,
     val passages: Array<String>
 ) {
