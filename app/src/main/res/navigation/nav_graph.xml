@@ -9,5 +9,22 @@
         android:id="@+id/serviceSelectFragment"
         android:name="uk.nottsknight.stmarysprayer.ServiceSelectFragment"
         android:label="service_select_fragment"
-        tools:layout="@layout/fragment_service_select" />
+        tools:layout="@layout/fragment_service_select" >
+        <action
+            android:id="@+id/action_serviceSelectFragment_to_commonWorshipFragment"
+            app:destination="@id/commonWorshipFragment" />
+        <action
+            android:id="@+id/action_serviceSelectFragment_to_englishPrayerBookFragment"
+            app:destination="@id/englishPrayerBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commonWorshipFragment"
+        android:name="uk.nottsknight.stmarysprayer.prayer.CommonWorshipFragment"
+        android:label="fragment_common_worship"
+        tools:layout="@layout/fragment_common_worship" />
+    <fragment
+        android:id="@+id/englishPrayerBookFragment"
+        android:name="uk.nottsknight.stmarysprayer.prayer.EnglishPrayerBookFragment"
+        android:label="fragment_english_prayer_book"
+        tools:layout="@layout/fragment_english_prayer_book" />
 </navigation>
