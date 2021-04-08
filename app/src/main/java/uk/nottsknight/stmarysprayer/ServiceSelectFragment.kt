@@ -28,10 +28,12 @@ class ServiceSelectFragment : Fragment() {
             container,
             false
         )
-        viewModel.englishPrayerBookCallback =
-            NavigationCallback { findNavController().navigate(R.id.action_serviceSelectFragment_to_englishPrayerBookFragment) }
-        viewModel.commonWorshipCallback =
-            NavigationCallback { findNavController().navigate(R.id.action_serviceSelectFragment_to_commonWorshipFragment) }
+        viewModel.englishPrayerBookCallback = NavigationCallback {
+            findNavController().navigate(R.id.action_serviceSelectFragment_to_englishPrayerBookFragment)
+        }
+        viewModel.commonWorshipCallback = NavigationCallback {
+            findNavController().navigate(R.id.action_serviceSelectFragment_to_commonWorshipFragment)
+        }
         binding.viewModel = viewModel
         return binding.root
     }
