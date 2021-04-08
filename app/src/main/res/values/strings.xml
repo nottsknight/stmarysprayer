@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">St Mary\'s Prayer</string>
 
+    <!-- Action bar -->
+    <string name="actionbar_settings">Settings</string>
+
     <!-- PREFERENCES -->
     <string name="prefs_scripture">Bible references</string>
     <string name="prefs_scripture_versenumbers_key">include-verse-numbers</string>
@@ -13,5 +16,19 @@
     <string name="prefs_scripture_footnotes_value">Show footnotes?</string>
     <!-- SERVICE SELECT STRING -->
     <string name="sselect_epb">English Prayer Book</string>
-  <string name="sselect_cw">Common Worship</string>
+    <string name="sselect_cw">Common Worship</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
