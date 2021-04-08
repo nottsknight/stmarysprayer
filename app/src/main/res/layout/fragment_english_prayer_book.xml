@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,61 +9,71 @@
             type="uk.nottsknight.stmarysprayer.prayer.EnglishPrayerBookViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/epbConstraintLayout"
+    <LinearLayout
+        android:id="@+id/epbLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
         tools:context=".prayer.EnglishPrayerBookFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_heading_preparation"
+            android:textAlignment="textEnd"
+            android:textSize="21sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/epbSentence1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.scriptureSentence1}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@{viewModel.scriptureSentence1}" />
 
         <TextView
             android:id="@+id/epbSentence2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.scriptureSentence2}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/epbSentence1" />
+            android:text="@{viewModel.scriptureSentence2}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_confession_heading"
+            android:textAlignment="textEnd"
+            android:textSize="21sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_introduction_text" />
+
+        <TextView
+            android:id="@+id/epb_confession_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.confession}"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/epbPsalm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.psalm}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/epbSentence2" />
+            android:text="@{viewModel.psalm}" />
 
         <TextView
             android:id="@+id/epbOldTestament"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.oldTestament}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/epbPsalm" />
+            android:text="@{viewModel.oldTestament}" />
 
         <TextView
             android:id="@+id/epbNewTestament"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.newTestament}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/epbOldTestament" />
+            android:text="@{viewModel.newTestament}" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
