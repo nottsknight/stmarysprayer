@@ -20,7 +20,9 @@ private fun String.buildUriFrom(
     parameters: List<Pair<String, Any>>
 ): String {
 
-    val queries = passages.map { it.replace(WHITESPACE, "") }.reduce { acc, s -> acc + s }
+    val queries = if (passages.isEmpty()) { "" } else {
+        passages.map { it.replace(WHITESPACE, "") }.reduce { acc, s -> acc + s }
+    }
     var uri = "$this?q=$queries"
     for ((k, v) in parameters) {
         uri += "&$k=$v"
