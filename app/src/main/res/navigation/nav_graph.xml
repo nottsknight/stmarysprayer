@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_serviceSelectFragment_to_englishPrayerBookFragment"
             app:destination="@id/englishPrayerBookFragment" />
+        <action
+            android:id="@+id/action_serviceSelectFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/commonWorshipFragment"
@@ -27,4 +30,8 @@
         android:name="uk.nottsknight.stmarysprayer.prayer.EnglishPrayerBookFragment"
         android:label="fragment_english_prayer_book"
         tools:layout="@layout/fragment_english_prayer_book" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="uk.nottsknight.stmarysprayer.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
