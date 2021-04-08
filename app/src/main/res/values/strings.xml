@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">St Mary\'s Prayer</string>
 
+    <!-- Action bar -->
+    <string name="actionbar_settings">Settings</string>
+
     <!-- PREFERENCES -->
     <string name="prefs_scripture">Bible references</string>
     <string name="prefs_scripture_versenumbers_key">include-verse-numbers</string>
