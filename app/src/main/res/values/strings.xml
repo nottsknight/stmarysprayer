@@ -11,4 +11,7 @@
     <string name="prefs_scripture_headings_value">Show headings?</string>
     <string name="prefs_scripture_footnotes_key">include-footnotes</string>
     <string name="prefs_scripture_footnotes_value">Show footnotes?</string>
+    <!-- SERVICE SELECT STRING -->
+    <string name="sselect_epb">English Prayer Book</string>
+  <string name="sselect_cw">Common Worship</string>
 </resources>
