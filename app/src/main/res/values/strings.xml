@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">St Mary\'s Prayer</string>
+
+    <!-- SERVICE SELECT STRING -->
+    <string name="sselect_epb">English Prayer Book</string>
+    <string name="sselect_cw">Common Worship</string>
 </resources>

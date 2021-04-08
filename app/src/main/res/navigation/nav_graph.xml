@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/serviceSelectFragment">
+
+    <fragment
+        android:id="@+id/serviceSelectFragment"
+        android:name="uk.nottsknight.stmarysprayer.ServiceSelectFragment"
+        android:label="service_select_fragment"
+        tools:layout="@layout/fragment_service_select" >
+        <action
+            android:id="@+id/action_serviceSelectFragment_to_commonWorshipFragment"
+            app:destination="@id/commonWorshipFragment" />
+        <action
+            android:id="@+id/action_serviceSelectFragment_to_englishPrayerBookFragment"
+            app:destination="@id/englishPrayerBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commonWorshipFragment"
+        android:name="uk.nottsknight.stmarysprayer.prayer.CommonWorshipFragment"
+        android:label="fragment_common_worship"
+        tools:layout="@layout/fragment_common_worship" />
+    <fragment
+        android:id="@+id/englishPrayerBookFragment"
+        android:name="uk.nottsknight.stmarysprayer.prayer.EnglishPrayerBookFragment"
+        android:label="fragment_english_prayer_book"
+        tools:layout="@layout/fragment_english_prayer_book" />
+</navigation>
