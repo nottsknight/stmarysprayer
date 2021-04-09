@@ -64,12 +64,11 @@ class EsvApiController(private val context: Context) {
 
         return service.getPassagesText(query, verseNumbers, firstVerseNumbers, headings, footnotes)
             .execute().let {
-            if (it.isSuccessful) {
-                val response = it.body()!!
-                Either.Right(response.passages.toList())
-            } else {
-                Either.Left(it.code())
+                if (it.isSuccessful) {
+                    Either.Right(it.body()?.passages?.toList() ?: listOf())
+                } else {
+                    Either.Left(it.code())
+                }
             }
-        }
     }
 }
