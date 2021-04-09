@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import kotlinx.serialization.ExperimentalSerializationApi
 import uk.nottsknight.stmarysprayer.R
 import uk.nottsknight.stmarysprayer.databinding.FragmentEnglishPrayerBookBinding
 
+@ExperimentalSerializationApi
 class EnglishPrayerBookFragment : Fragment() {
 
     companion object {
@@ -31,10 +33,4 @@ class EnglishPrayerBookFragment : Fragment() {
         binding.viewModel = viewModel
         return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel.initialiseTexts()
-    }
-
 }
