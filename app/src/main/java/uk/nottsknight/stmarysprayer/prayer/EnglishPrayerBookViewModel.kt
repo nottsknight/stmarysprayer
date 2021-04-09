@@ -6,6 +6,7 @@ import androidx.lifecycle.liveData
 import arrow.core.Either
 import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.ExperimentalSerializationApi
+import uk.nottsknight.stmarysprayer.R
 import uk.nottsknight.stmarysprayer.esvapi.EsvApiController
 
 @ExperimentalSerializationApi
@@ -24,6 +25,11 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> Unit
         }
+    }
+
+    val confession = liveData {
+        val confession = app.resources.getStringArray(R.array.epb_confession_texts).random()
+        emit(confession)
     }
 
     val psalm = liveData(Dispatchers.IO) {
