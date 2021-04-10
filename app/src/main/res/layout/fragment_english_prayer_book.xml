@@ -58,10 +58,66 @@
             android:textStyle="bold" />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_absolution_text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lords_prayer_heading"
+            android:textAlignment="textEnd"
+            android:textSize="21sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lords_prayer"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_openingresponse_heading"
+            android:textAlignment="textEnd"
+            android:textSize="21sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_openingresponses" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_heading_wordofgod"
+            android:textAlignment="textEnd"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_wordofgod_psalmody_heading"
+            android:textAlignment="textEnd"
+            android:textSize="21sp"
+            android:textStyle="italic" />
+
+        <TextView
             android:id="@+id/epbPsalm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.psalm}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/epb_wordofgod_scripture_heading"
+            android:textAlignment="textEnd"
+            android:textSize="21sp"
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/epbOldTestament"

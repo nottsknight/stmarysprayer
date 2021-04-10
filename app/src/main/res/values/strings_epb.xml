@@ -42,4 +42,27 @@
             through Jesus Christ our Lord.  Amen.
         </item>
     </string-array>
+    <string name="epb_absolution_text">
+        Merciful God, grant to your faithful people pardon and peace;
+        that we may be cleansed from all our sins and serve you with a
+        quiet mind; through Jesus Christ our Lord. Amen.
+    </string>
+
+    <string name="epb_openingresponse_heading">Opening responses</string>
+    <string name="epb_openingresponses">
+        Open our lips, O Lord,\n
+        <b>and we shall declare your praise.</b>\n\n
+        O God, make speed to save us.\n
+        <b>O Lord, make haste to help us.</b>\n\n
+        Glory to the Father, and to the Son,\n
+        and to the Holy Spirit:\n
+        <b>as it was in the beginning, is now,\n
+        and shall be forever. Amen.</b>\n\n
+        Let us praise the Lord.\n
+        <b>The Lord\'s name be praised.</b>
+    </string>
+
+    <string name="epb_heading_wordofgod">The Word of God</string>
+    <string name="epb_wordofgod_psalmody_heading">Psalmody</string>
+    <string name="epb_wordofgod_scripture_heading">Scripture readings</string>
 </resources>
