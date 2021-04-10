@@ -1,6 +1,7 @@
 package uk.nottsknight.stmarysprayer.prayer
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.liveData
 import arrow.core.Either
@@ -11,9 +12,10 @@ import uk.nottsknight.stmarysprayer.esvapi.EsvApiController
 
 @ExperimentalSerializationApi
 class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
-    private val api: EsvApiController by lazy { EsvApiController(app.baseContext) }
+    private val api: EsvApiController = EsvApiController(app.baseContext)
 
     val scriptureSentence1 = liveData(Dispatchers.IO) {
+        Log.d("smwp", "scriptureSentence1 liveData")
         when (val passages = api.getPassages(listOf(SCRIPTURE_SENTENCES.random()))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> Unit
@@ -21,6 +23,7 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val scriptureSentence2 = liveData(Dispatchers.IO) {
+        Log.d("smwp", "scriptureSentence2 liveData")
         when (val passages = api.getPassages(listOf(SCRIPTURE_SENTENCES.random()))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> Unit
@@ -28,11 +31,13 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val confession = liveData {
+        Log.d("smwp", "confession liveData")
         val confession = app.resources.getStringArray(R.array.epb_confession_texts).random()
         emit(confession)
     }
 
     val psalm = liveData(Dispatchers.IO) {
+        Log.d("smwp", "psalm liveData")
         when (val passages = api.getPassages(listOf("Psalm 95"))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> Unit
@@ -40,6 +45,7 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val oldTestament = liveData(Dispatchers.IO) {
+        Log.d("smwp", "oldTestament liveData")
         when (val passages = api.getPassages(listOf("Genesis 1"))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> Unit
@@ -47,6 +53,7 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val newTestament = liveData(Dispatchers.IO) {
+        Log.d("smwp", "newTestament liveData")
         when (val passages = api.getPassages(listOf("Matthew 1"))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> Unit

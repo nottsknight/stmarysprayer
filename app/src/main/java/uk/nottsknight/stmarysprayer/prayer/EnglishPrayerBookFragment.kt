@@ -13,11 +13,6 @@ import uk.nottsknight.stmarysprayer.databinding.FragmentEnglishPrayerBookBinding
 
 @ExperimentalSerializationApi
 class EnglishPrayerBookFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = EnglishPrayerBookFragment()
-    }
-
     private val viewModel: EnglishPrayerBookViewModel by viewModels()
 
     override fun onCreateView(
@@ -31,6 +26,7 @@ class EnglishPrayerBookFragment : Fragment() {
             false
         )
         binding.viewModel = viewModel
+        binding.lifecycleOwner = this
         return binding.root
     }
 }

@@ -1,6 +1,7 @@
 package uk.nottsknight.stmarysprayer.esvapi
 
 import android.content.Context
+import android.util.Log
 import androidx.preference.PreferenceManager
 import arrow.core.Either
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -47,6 +48,8 @@ class EsvApiController(private val context: Context) {
             val query = passages
                 .map { it.replace(whitespaceRegex, "") }
                 .reduce { acc, s -> acc + s }
+
+            Log.d("smwp", "getPassages $query")
 
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
             val verseNumbers = preferences.getBoolean(
