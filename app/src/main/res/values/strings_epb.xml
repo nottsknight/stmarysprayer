@@ -128,4 +128,19 @@
             for the love of your only Son our Saviour Jesus Christ. Amen.
         </item>
     </string-array>
+
+    <string name="epb_heading_conclusion">Conclusion</string>
+    <string-array name="epb_conclusion_blessings">
+        <item>
+            The Lord bless you and keep you; the Lord make his face to shine upon you
+            and be gracious to you; the Lord turn his face towards you and give you his peace;
+            through Jesus Christ our Lord. <b>Amen.</b>
+        </item>
+        <item>
+            The peace of God which passes all understanding, keep your hearts and minds in the
+            knowledge and love of God, and of his Son Jesus Christ our Lord; and the blessing
+            of God Almighty, the Father, the Son, and the Holy Spirit,
+            be upon you and remain with you always. <b>Amen.</b>
+        </item>
+    </string-array>
 </resources>

@@ -160,6 +160,20 @@
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.collect}" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/epb_heading_conclusion"
+                android:textAlignment="textEnd"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/epbBlessing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.blessing}" />
+
         </LinearLayout>
     </ScrollView>
 </layout>

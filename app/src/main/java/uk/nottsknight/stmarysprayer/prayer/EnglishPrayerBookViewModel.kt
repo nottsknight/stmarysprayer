@@ -82,6 +82,10 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    val blessing = liveData(Dispatchers.IO) {
+        app.resources.getStringArray(R.array.epb_conclusion_blessings).random().let { emit(it) }
+    }
+
     companion object {
         private val SCRIPTURE_SENTENCES = arrayOf(
             "Psalm 46:1",
