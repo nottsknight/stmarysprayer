@@ -23,7 +23,6 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     private fun makeErrorMessage(code: Int) = "Failed to download passage (error $code)"
 
     val scriptureSentence1 = liveData(Dispatchers.IO) {
-        Log.d("smwp", "scriptureSentence1 liveData")
         when (val passages = api.getPassages(listOf(SCRIPTURE_SENTENCES.random()))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
@@ -31,7 +30,6 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val scriptureSentence2 = liveData(Dispatchers.IO) {
-        Log.d("smwp", "scriptureSentence2 liveData")
         when (val passages = api.getPassages(listOf(SCRIPTURE_SENTENCES.random()))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
@@ -39,13 +37,11 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val confession = liveData {
-        Log.d("smwp", "confession liveData")
         val confession = app.resources.getStringArray(R.array.epb_confession_texts).random()
         emit(confession)
     }
 
     val psalm = liveData(Dispatchers.IO) {
-        Log.d("smwp", "psalm liveData")
         when (val passages = api.getPassages(listOf("Psalm 95"))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
@@ -53,7 +49,6 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val oldTestament = liveData(Dispatchers.IO) {
-        Log.d("smwp", "oldTestament liveData")
         when (val passages = api.getPassages(listOf("Genesis 1"))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
@@ -61,7 +56,6 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     val newTestament = liveData(Dispatchers.IO) {
-        Log.d("smwp", "newTestament liveData")
         when (val passages = api.getPassages(listOf("Matthew 1"))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))

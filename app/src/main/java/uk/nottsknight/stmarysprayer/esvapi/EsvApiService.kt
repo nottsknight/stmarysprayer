@@ -49,8 +49,6 @@ class EsvApiController(private val context: Context) {
                 .map { it.replace(whitespaceRegex, "") }
                 .reduce { acc, s -> acc + s }
 
-            Log.d("smwp", "getPassages $query")
-
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
             val verseNumbers = preferences.getBoolean(
                 context.getString(R.string.prefs_scripture_versenumbers_key),
