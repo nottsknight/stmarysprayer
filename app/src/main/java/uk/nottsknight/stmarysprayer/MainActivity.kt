@@ -20,9 +20,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
-            R.id.actionbar_settings -> findNavController(R.id.nav_host_fragment_container).navigate(
-                R.id.action_serviceSelectFragment_to_settingsFragment
-            ).let { true }
+            R.id.actionbar_settings -> {
+                findNavController(R.id.nav_host_fragment_container).navigate(R.id.settingsFragment)
+                true
+            }
             else -> false
         }
 }
