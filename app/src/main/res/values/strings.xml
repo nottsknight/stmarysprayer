@@ -31,4 +31,21 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="lords_prayer_heading">The Lord\'s Prayer</string>
+    <string name="lords_prayer">
+        Our Father in heaven,\n
+        hallowed be your name.\n
+        Your kingdom come,\n
+        your will be done\n
+        on earth as in heaven.\n
+        Give us today our daily bread.\n
+        Forgive us our sins\n
+        as we forgive those who sin against us.\n
+        And lead us not into temptation\n
+        but deliver us from evil;\n
+        for the kingdom, the power,\n
+        and the glory are yours,\n
+        now and forever. Amen.
+    </string>
 </resources>
