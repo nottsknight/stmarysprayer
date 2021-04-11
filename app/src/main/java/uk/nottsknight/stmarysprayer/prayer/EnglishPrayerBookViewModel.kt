@@ -3,6 +3,8 @@ package uk.nottsknight.stmarysprayer.prayer
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import arrow.core.Either
 import kotlinx.coroutines.Dispatchers
@@ -14,11 +16,16 @@ import uk.nottsknight.stmarysprayer.esvapi.EsvApiController
 class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
     private val api: EsvApiController = EsvApiController(app.baseContext)
 
+    private val _errorMessage = MutableLiveData<String>()
+    val errorMessage: LiveData<String> get() = _errorMessage
+
+    private fun makeErrorMessage(code: Int) = "Failed to download passage (error $code)"
+
     val scriptureSentence1 = liveData(Dispatchers.IO) {
         Log.d("smwp", "scriptureSentence1 liveData")
         when (val passages = api.getPassages(listOf(SCRIPTURE_SENTENCES.random()))) {
             is Either.Right -> emit(passages.value[0])
-            is Either.Left -> Unit
+            is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
         }
     }
 
@@ -26,7 +33,7 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
         Log.d("smwp", "scriptureSentence2 liveData")
         when (val passages = api.getPassages(listOf(SCRIPTURE_SENTENCES.random()))) {
             is Either.Right -> emit(passages.value[0])
-            is Either.Left -> Unit
+            is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
         }
     }
 
@@ -40,7 +47,7 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
         Log.d("smwp", "psalm liveData")
         when (val passages = api.getPassages(listOf("Psalm 95"))) {
             is Either.Right -> emit(passages.value[0])
-            is Either.Left -> Unit
+            is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
         }
     }
 
@@ -48,7 +55,7 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
         Log.d("smwp", "oldTestament liveData")
         when (val passages = api.getPassages(listOf("Genesis 1"))) {
             is Either.Right -> emit(passages.value[0])
-            is Either.Left -> Unit
+            is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
         }
     }
 
@@ -56,7 +63,7 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
         Log.d("smwp", "newTestament liveData")
         when (val passages = api.getPassages(listOf("Matthew 1"))) {
             is Either.Right -> emit(passages.value[0])
-            is Either.Left -> Unit
+            is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
         }
     }
 
