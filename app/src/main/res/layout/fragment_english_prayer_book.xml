@@ -135,6 +135,31 @@
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.newTestament}" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/epb_heading_prayers"
+                android:textAlignment="textEnd"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/epb_prayers_intercessions" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/epb_prayers_private"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/epbCollect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.collect}" />
+
         </LinearLayout>
     </ScrollView>
 </layout>

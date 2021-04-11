@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.ExperimentalSerializationApi
 import uk.nottsknight.stmarysprayer.R
 import uk.nottsknight.stmarysprayer.esvapi.EsvApiController
+import java.util.*
 
 @ExperimentalSerializationApi
 class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
@@ -64,6 +65,20 @@ class EnglishPrayerBookViewModel(app: Application) : AndroidViewModel(app) {
         when (val passages = api.getPassages(listOf("Matthew 1"))) {
             is Either.Right -> emit(passages.value[0])
             is Either.Left -> _errorMessage.postValue(makeErrorMessage(passages.value))
+        }
+    }
+
+    val collect = liveData(Dispatchers.IO) {
+        val collectArray = when (Calendar.getInstance()[Calendar.AM_PM]) {
+            Calendar.AM -> R.array.epb_morning_collects
+            Calendar.PM -> R.array.epb_evening_collects
+            else -> 0
+        }
+
+        if (collectArray != 0) {
+            app.resources.getStringArray(collectArray).random().let { emit(it) }
+        } else {
+            _errorMessage.postValue("Could not determine time of day")
         }
     }
 

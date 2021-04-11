@@ -65,4 +65,67 @@
     <string name="epb_heading_wordofgod">The Word of God</string>
     <string name="epb_wordofgod_psalmody_heading">Psalmody</string>
     <string name="epb_wordofgod_scripture_heading">Scripture readings</string>
+
+    <string name="epb_heading_prayers">Prayers</string>
+    <string name="epb_prayers_intercessions">
+        O Lord, show us your mercy,\n
+        <b>and grant us your salvation.</b>\n
+        O Lord, save the Queen,\n
+        <b>and mercifully hear us when we pray to you.</b>\n
+        Endow your ministers with righteousness,\n
+        <b>and make your chosen people joyful.</b>\n
+        O Lord, save your people,\n
+        <b>and bless your inheritance.</b>\n
+        Give peace in our time, O Lord,\n
+        <b>for you are our help and strength.</b>\n
+        O God, cleanse our hearts,\n
+        <b>and revive us by your Holy Spirit.</b>
+    </string>
+    <string name="epb_prayers_private">
+        This is followed with a series of private intercessions, perhaps for the day
+        ahead or for people we know.
+    </string>
+
+    <string-array name="epb_morning_collects">
+        <item>
+            O Lord our heavenly Father,\n
+            Almighty and Everlasting God,\n
+            we praise you for bringing us safely\n
+            to the beginning of this day:\n
+            defend us with your mighty power,\n
+            and grant that we may fall into no sin,\n
+            nor run into any kind of danger,\n
+            but govern and guide us at all times,\n
+            so that we may do what is right in your sight;\n
+            through Jesus Christ our Lord. Amen.
+        </item>
+        <item>
+            O God, the author and lover of peace,\n
+            whom to know is eternal life\n
+            and to serve is perfect freedom:\n
+            defend us your humble servants\n
+            against all assaults of our enemies,\n
+            that trusting in your defence,\n
+            we may not fear the power of any adversary;\n
+            through the might of Jesus Christ our Lord. Amen.
+        </item>
+    </string-array>
+
+    <string-array name="epb_evening_collects">
+        <item>
+            O God, the author of all holy desires,\n
+            all good purposes, and all just works:\n
+            give to us your servants that peace which the world cannot give,\n
+            so that we, obeying your commands,\n
+            and being delivered from the fear of our enemies,\n
+            may live in rest and quietness;\n
+            through the merits of Jesus Christ our Saviour. Amen.
+        </item>
+        <item>
+            Lighten our darkness, Lord:\n
+            and by your great mercy defend us\n
+            from all peril and danger this night;\n
+            for the love of your only Son our Saviour Jesus Christ. Amen.
+        </item>
+    </string-array>
 </resources>
