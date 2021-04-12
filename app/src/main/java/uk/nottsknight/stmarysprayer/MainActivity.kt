@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
                 findNavController(R.id.nav_host_fragment_container).navigate(R.id.settingsFragment)
                 true
             }
+            R.id.actionbar_copyright -> {
+                findNavController(R.id.nav_host_fragment_container).navigate(R.id.copyrightFragment)
+                true
+            }
             else -> false
         }
 }
