@@ -19,6 +19,21 @@
     <string name="sselect_epb">English Prayer Book</string>
     <string name="sselect_cw">Common Worship</string>
 
+    <!-- Copyright strings -->
+    <string name="copyright_esv">
+        Scripture quotations are from The ESV Bible® (The Holy Bible, English
+        Standard Version®), copyright © 2001 by Crossway, a publishing ministry
+        of Good News Publishers. Used by permission. All rights reserved.
+    </string>
+    <string name="copyright_cw">
+        <i>Common Worship: Services and Prayers for the Church of England</i>,
+        material from which is included in this app, is copyright © The Archbishops'
+        Council 2000.
+    </string>
+    <string name="copyright_epb">
+        <i>An English Prayer Book</i> is copyright © 1994 by Church Society.
+    </string>
+
     <string name="lords_prayer_heading">The Lord\'s Prayer</string>
     <string name="lords_prayer">
         Our Father in heaven,\n
