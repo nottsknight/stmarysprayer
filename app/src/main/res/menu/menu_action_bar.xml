@@ -7,4 +7,9 @@
         android:icon="@drawable/baseline_settings_white_48"
         android:title="@string/actionbar_settings"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/actionbar_copyright"
+        android:title="@string/actionbar_copyright"
+        app:showAsAction="never" />
 </menu>

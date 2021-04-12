@@ -34,4 +34,9 @@
         android:id="@+id/settingsFragment"
         android:name="uk.nottsknight.stmarysprayer.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/copyrightFragment"
+        android:name="uk.nottsknight.stmarysprayer.CopyrightFragment"
+        android:label="fragment_copyright"
+        tools:layout="@layout/fragment_copyright" />
 </navigation>
