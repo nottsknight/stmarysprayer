@@ -1,41 +1,13 @@
 package uk.nottsknight.stmarysprayer
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.ListFragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import uk.nottsknight.stmarysprayer.databinding.FragmentServiceSelectBinding
 
 class ServiceSelectFragment : ListFragment() {
-    private val viewModel: ServiceSelectViewModel by viewModels()
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // data binding
-        val binding = DataBindingUtil.inflate<FragmentServiceSelectBinding>(
-            inflater,
-            R.layout.fragment_service_select,
-            container,
-            false
-        )
-        viewModel.englishPrayerBookCallback = NavigationCallback {
-            findNavController().navigate(R.id.action_serviceSelectFragment_to_englishPrayerBookFragment)
-        }
-        viewModel.commonWorshipCallback = NavigationCallback {
-            findNavController().navigate(R.id.action_serviceSelectFragment_to_commonWorshipFragment)
-        }
-        binding.viewModel = viewModel
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         listAdapter =
@@ -51,8 +23,4 @@ class ServiceSelectFragment : ListFragment() {
         1 -> findNavController().navigate(R.id.action_serviceSelectFragment_to_commonWorshipFragment)
         else -> Unit
     }
-}
-
-fun interface NavigationCallback {
-    fun performNavigation()
 }
