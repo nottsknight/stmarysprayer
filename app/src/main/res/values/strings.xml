@@ -16,6 +16,10 @@
     <string name="prefs_scripture_footnotes_key">include-footnotes</string>
     <string name="prefs_scripture_footnotes_value">Show footnotes?</string>
     <!-- SERVICE SELECT STRING -->
+    <string-array name="sselect_services">
+        <item>English Prayer Book</item>
+        <item>Common Worship</item>
+    </string-array>
     <string name="sselect_epb">English Prayer Book</string>
     <string name="sselect_cw">Common Worship</string>
     <!-- Preference Titles -->
