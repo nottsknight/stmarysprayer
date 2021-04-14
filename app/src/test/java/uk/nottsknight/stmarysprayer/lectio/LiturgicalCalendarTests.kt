@@ -28,4 +28,27 @@ class LiturgicalCalendarTests {
         assertThat(date4[Calendar.MONTH]).isEqualTo(Calendar.MARCH)
         assertThat(date4[Calendar.DAY_OF_MONTH]).isEqualTo(31)
     }
+
+    @Test
+    fun testStartOfAdvent() {
+        val date1 = LiturgicalCalendar.startOfAdvent(2008)
+        assertThat(date1[Calendar.YEAR]).isEqualTo(2008)
+        assertThat(date1[Calendar.MONTH]).isEqualTo(Calendar.NOVEMBER)
+        assertThat(date1[Calendar.DAY_OF_MONTH]).isEqualTo(30)
+
+        val date2 = LiturgicalCalendar.startOfAdvent(2009)
+        assertThat(date2[Calendar.YEAR]).isEqualTo(2009)
+        assertThat(date2[Calendar.MONTH]).isEqualTo(Calendar.NOVEMBER)
+        assertThat(date2[Calendar.DAY_OF_MONTH]).isEqualTo(29)
+
+        val date3 = LiturgicalCalendar.startOfAdvent(2010)
+        assertThat(date3[Calendar.YEAR]).isEqualTo(2010)
+        assertThat(date3[Calendar.MONTH]).isEqualTo(Calendar.NOVEMBER)
+        assertThat(date3[Calendar.DAY_OF_MONTH]).isEqualTo(28)
+
+        val date4 = LiturgicalCalendar.startOfAdvent(2013)
+        assertThat(date4[Calendar.YEAR]).isEqualTo(2013)
+        assertThat(date4[Calendar.MONTH]).isEqualTo(Calendar.DECEMBER)
+        assertThat(date4[Calendar.DAY_OF_MONTH]).isEqualTo(1)
+    }
 }

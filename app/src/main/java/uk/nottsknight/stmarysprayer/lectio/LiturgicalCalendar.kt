@@ -41,6 +41,17 @@ class LiturgicalCalendar private constructor() : Serializable, Comparable<Liturg
         }
 
         /**
+         * Obtain a new [Calendar] instance set to the first Sunday of Advent for
+         * the given year.
+         */
+        fun startOfAdvent(year: Int): Calendar {
+            val cal = GregorianCalendar(year, Calendar.DECEMBER, 25)
+            while (cal[Calendar.DAY_OF_WEEK] != Calendar.SUNDAY) cal[Calendar.DATE] -= 1
+            cal[Calendar.WEEK_OF_YEAR] -= 3
+            return cal
+        }
+
+        /**
          * Obtain a new [Calendar] instance set to the date of Easter for the given year.
          * The date is calculated according to Gauss' algorithm.
          */
