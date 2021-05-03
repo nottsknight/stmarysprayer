@@ -21,10 +21,8 @@ class LiturgicalCalendar private constructor(
         else -> "${this}th"
     }
 
-    override fun toString(): String = when (season.isOrdinaryTime) {
-        true -> "${week.toOrdinal()} Sunday ${season.label}"
-        false -> "${week.toOrdinal()} Sunday of ${season.label}"
-    }
+    override fun toString(): String =
+        "${week.toOrdinal()} ${if (season.isOrdinaryTime) "Sunday" else "Sunday of"} ${season.label}"
 
     enum class Season(val label: String, val length: Int, val isOrdinaryTime: Boolean) {
         ADVENT("Advent", 4, false),
