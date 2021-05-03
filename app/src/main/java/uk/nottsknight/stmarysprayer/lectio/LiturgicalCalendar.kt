@@ -1,13 +1,15 @@
 package uk.nottsknight.stmarysprayer.lectio
 
+import arrow.core.Either
 import java.io.Serializable
 import java.util.*
 import kotlin.math.floor
-import kotlin.properties.Delegates
 
-class LiturgicalCalendar private constructor() : Serializable, Comparable<LiturgicalCalendar> {
-    lateinit var season: Season
-    var week: Int by Delegates.notNull()
+class LiturgicalCalendar private constructor(
+    var season: Season,
+    var week: Int,
+    var day: Int? = null
+) : Serializable, Comparable<LiturgicalCalendar> {
 
     override fun compareTo(other: LiturgicalCalendar) =
         if (season == other.season) week - other.week else season.compareTo(other.season)
@@ -37,7 +39,9 @@ class LiturgicalCalendar private constructor() : Serializable, Comparable<Liturg
 
     companion object {
         fun forInstance(cal: Calendar): LiturgicalCalendar {
-            return LiturgicalCalendar()
+            val advent = startOfAdvent(cal[Calendar.YEAR])
+            if (cal < advent) advent[Calendar.YEAR] -= 1
+            return LiturgicalCalendar(Season.ADVENT, 1)
         }
 
         /**
@@ -71,6 +75,36 @@ class LiturgicalCalendar private constructor() : Serializable, Comparable<Liturg
             val month = if (day > 31) Calendar.APRIL else Calendar.MARCH
             if (day > 31) day = d + e - 9
             return GregorianCalendar(year, month, day.toInt())
+        }
+
+        private val LITURGICAL_DATE_PATTERN =
+            Regex("""(?<month>[0-7])-(?<week>[01][0-9]|2[0-3])(?:-(?<day>[0-6]))?""")
+
+        fun parse(input: String): Either<IllegalArgumentException, LiturgicalCalendar> {
+            val parsedInput = LITURGICAL_DATE_PATTERN.matchEntire(input)
+                ?: return Either.Left(IllegalArgumentException())
+
+            val (month, week, day) = parsedInput.groups.let {
+                val month = it[1]?.value?.toInt()
+                val week = it[2]?.value?.toInt()
+                val day = it[3]?.value?.toInt()
+                Triple(month, week, day)
+            }
+            if (month == null || week == null) return Either.Left(IllegalArgumentException())
+
+            val season = when (month) {
+                0 -> Season.ADVENT
+                1 -> Season.CHRISTMAS
+                2 -> Season.EPIPHANY
+                3 -> Season.BEFORE_LENT
+                4 -> Season.LENT
+                5 -> Season.EASTER
+                6 -> Season.AFTER_TRINITY
+                7 -> Season.BEFORE_ADVENT
+                else -> null
+            } ?: return Either.Left(IllegalArgumentException())
+
+            return Either.Right(LiturgicalCalendar(season, week, day))
         }
     }
 }
