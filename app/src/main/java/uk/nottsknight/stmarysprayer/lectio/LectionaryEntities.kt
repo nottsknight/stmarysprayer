@@ -2,7 +2,7 @@ package uk.nottsknight.stmarysprayer.lectio
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
+import java.time.ZonedDateTime
 
 @Entity
 data class Lectionary(
@@ -34,5 +34,5 @@ data class LectionaryEntry(
 data class Scripture(
     @PrimaryKey val reference: String,
     val text: String,
-    val lastUpdated: Calendar
+    val lastUpdated: ZonedDateTime?
 )

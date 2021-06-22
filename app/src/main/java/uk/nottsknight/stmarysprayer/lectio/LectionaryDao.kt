@@ -22,6 +22,6 @@ interface LectionaryDao {
     @Delete
     fun deleteScripture(scripture: Scripture)
 
-    @Query("SELECT * FROM Scripture WHERE reference = :reference")
+    @Query("SELECT * FROM Scripture WHERE reference LIKE :reference")
     fun selectScripture(reference: String): Scripture?
 }
