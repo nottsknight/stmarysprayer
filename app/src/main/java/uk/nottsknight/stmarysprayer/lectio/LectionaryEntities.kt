@@ -1,14 +1,14 @@
 package uk.nottsknight.stmarysprayer.lectio
 
 import androidx.room.Entity
-import androidx.room.Index
 import androidx.room.PrimaryKey
+import java.util.*
 
 @Entity
-data class LectionaryTable(
+data class Lectionary(
     @PrimaryKey val uid: Int,
-    val name: String,
-    val abbreviation: String
+    val tableName: String,
+    val subtableName: String?
 )
 
 @Entity
@@ -18,20 +18,21 @@ data class LiturgicalSeason(
 )
 
 @Entity
-data class LiturgicalDate(
-    @PrimaryKey val uid: Int,
-    val seasonId: Int,
-    val week: Int,
-    val day: Int
-)
-
-@Entity(indices = [Index(value = ["lectionaryId", "dateId"], unique = true)])
-data class Readings(
+data class LectionaryEntry(
     @PrimaryKey val uid: Int,
     val lectionaryId: Int,
-    val dateId: Int,
+    val seasonId: Int,
+    val week: Int,
+    val day: Int,
     val oldTestament: String,
     val psalm: String,
     val newTestament: String,
     val gospel: String?
+)
+
+@Entity
+data class Scripture(
+    @PrimaryKey val reference: String,
+    val text: String,
+    val lastUpdated: Calendar
 )
