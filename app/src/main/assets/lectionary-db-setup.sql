@@ -1,8 +1,11 @@
 
-INSERT INTO LectionaryTable
+INSERT INTO Lectionary
 VALUES
-    (1, "Revised Common Lectionary", "RCL"),
-    (2, "Alternative Weekday Lectionary", "AWL");
+    (1, "Revised Common Lectionary", "Year A"),
+    (2, "Revised Common Lectionary", "Year B"),
+    (3, "Revised Common Lectionary", "Year C"),
+    (4, "Alternate Weekday Lectionary", "Year 1"),
+    (5, "Alternate Weekday Lectionary", "Year 2");
 
 INSERT INTO LiturgicalSeason
 VALUES
@@ -11,6 +14,5 @@ VALUES
     (3, "Epiphany", 0),
     (4, "Before Lent", 1),
     (5, "Lent", 0),
-    (6, "Easter", 0),
-    (7, "After Trinity", 1),
-    (8, "Before Advent", 1);
+    (6, "After Trinity", 1),
+    (7, "Before Advent", 1);

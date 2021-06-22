@@ -14,7 +14,8 @@ data class Lectionary(
 @Entity
 data class LiturgicalSeason(
     @PrimaryKey val uid: Int,
-    val name: String
+    val name: String,
+    val ordinaryTime: Boolean
 )
 
 @Entity
